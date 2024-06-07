@@ -16,6 +16,15 @@ function App() {
       const url =
         'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_KEY}`;
     }
+    try {
+      const res =await fetch(url)
+      const data = await res.json()
+      console.log('DATA\n', data)
+
+    } catch (err) {
+      console.log(err.message)
+    }
+    fetchAPIData()
   }, []);
   return (
     <>
